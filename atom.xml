@@ -1,45 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://acrofrank-b.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-05-08T07:04:43.528Z</updated>
+    <title>Chesterfieldian_PandaO &apos;s Notebook</title>
+    <updated>2020-05-15T03:34:30.901Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://acrofrank-b.github.io"/>
     <link rel="self" href="https://acrofrank-b.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>forge meaning, build identity</subtitle>
     <logo>https://acrofrank-b.github.io/images/avatar.png</logo>
     <icon>https://acrofrank-b.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, Chesterfieldian_PandaO &apos;s Notebook</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://acrofrank-b.github.io/post/hello-gridea/</id>
-        <link href="https://acrofrank-b.github.io/post/hello-gridea/">
+        <title type="html"><![CDATA[Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus]]></title>
+        <id>https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/</id>
+        <link href="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2020-05-15T03:22:40.000Z</updated>
+        <content type="html"><![CDATA[<p>This article outlines steps needed to create a REST API using Flask and Flask-RESTPlus. These tools combine into a framework, which automates common tasks:</p>
+<p>API input validation<br>
+formatting output (as JSON)<br>
+generating interactive documentation (with Swagger UI)<br>
+turning Python exceptions into machine-readable HTTP responses<br>
+Flask<br>
+Flask is a web micro-framework written in Python. Since it’s a micro-framework, Flask does very little by itself. In contrast to a framework like Django, which takes the “batteries included” approach, Flask does not come with an ORM, serializers, user management or built-in internationalization. All these features and many others are available as Flask extensions, which make up a rich, but loosely coupled ecosystem.</p>
+<p>The challenge, then, for an aspiring Flask developer lies in picking the right extensions and combining them together to get just the right set of functions. In this article we will describe how to use the Flask-RESTPlus extension to create a Flask-based RESTful JSON API.</p>
+<p>Flask-RESTPlus<br>
+Flask-RESTPlus aims to make building REST APIs quick and easy. It provides just enough syntactic sugar to make your code readable and easy to maintain. Its killer feature is the ability to automatically generate interactive documentation for your API using Swagger UI.</p>
+<p>Swagger UI<br>
+Swagger UI is part of a suite of technologies for documenting RESTful web services. Swagger has evolved into the OpenAPI specification, currently curated by the Linux Foundation. Once you have an OpenAPI description of your web service, you can use software tools to generate documentation or even boilerplate code (client or server) in a variety of languages. Take a look at swagger.io for more information.</p>
+<p>Swagger UI is a great tool for describing and visualizing RESTful web services. It generates a small webpage, which documents your API and allows you to make test queries using JavaScript. Click here to see a small demo.</p>
+<p>In this article we’ll describe how to use Flask and Flask-RESTPlus to create a RESTful API which comes equipped with Swagger UI.</p>
+<p>Getting started<br>
+To show off the features of Flask-RESTPlus I prepared a small demo application. It’s a part of an API for a blogging platform, which allows you to manage blog posts and categories.</p>
+<p>Let’s start by downloading and running this demo on your system, then we’ll walk through the code.</p>
+<p>Prerequisites<br>
+You will need to have Python with Virtualenv and Git installed on your machine.</p>
+<p>I would recommend using Python 3, but Python 2 should work just fine.</p>
+<p>Setting up the demo application<br>
+To download and start the demo application issue the following commands. First clone the application code into any directory on your disk:</p>
+<pre><code>$ cd /path/to/my/workspace/
+$ git clone https://github.com/postrational/rest_api_demo
+$ cd rest_api_demo
+</code></pre>
+<p>Create a virtual Python environment in a directory named venv, activate the virtualenv and install required dependencies using pip:</p>
+<pre><code>$ virtualenv -p `which python3` venv
+$ source venv/bin/activate
+(venv) $ pip install -r requirements.txt</code></pre>
 ]]></content>
     </entry>
 </feed>

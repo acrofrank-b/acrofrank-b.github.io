@@ -1,0 +1,197 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook</title>
+<link rel="shortcut icon" href="https://acrofrank-b.github.io/favicon.ico?v=1589513666457">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://acrofrank-b.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="This article outlines steps needed to create a REST API using Flask and Flask-RESTPlus. These tools combine into a frame..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://acrofrank-b.github.io">
+  <img class="avatar" src="https://acrofrank-b.github.io/images/avatar.png?v=1589513666457" alt="">
+  </a>
+  <h1 class="site-title">
+    Chesterfieldian_PandaO &#39;s Notebook
+  </h1>
+  <p class="site-description">
+    forge meaning, build identity
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/history" class="menu">
+          历史
+        </a>
+      
+    
+      
+        <a href="/film" class="menu">
+          电影
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-05-15
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>This article outlines steps needed to create a REST API using Flask and Flask-RESTPlus. These tools combine into a framework, which automates common tasks:</p>
+<p>API input validation<br>
+formatting output (as JSON)<br>
+generating interactive documentation (with Swagger UI)<br>
+turning Python exceptions into machine-readable HTTP responses<br>
+Flask<br>
+Flask is a web micro-framework written in Python. Since it’s a micro-framework, Flask does very little by itself. In contrast to a framework like Django, which takes the “batteries included” approach, Flask does not come with an ORM, serializers, user management or built-in internationalization. All these features and many others are available as Flask extensions, which make up a rich, but loosely coupled ecosystem.</p>
+<p>The challenge, then, for an aspiring Flask developer lies in picking the right extensions and combining them together to get just the right set of functions. In this article we will describe how to use the Flask-RESTPlus extension to create a Flask-based RESTful JSON API.</p>
+<p>Flask-RESTPlus<br>
+Flask-RESTPlus aims to make building REST APIs quick and easy. It provides just enough syntactic sugar to make your code readable and easy to maintain. Its killer feature is the ability to automatically generate interactive documentation for your API using Swagger UI.</p>
+<p>Swagger UI<br>
+Swagger UI is part of a suite of technologies for documenting RESTful web services. Swagger has evolved into the OpenAPI specification, currently curated by the Linux Foundation. Once you have an OpenAPI description of your web service, you can use software tools to generate documentation or even boilerplate code (client or server) in a variety of languages. Take a look at swagger.io for more information.</p>
+<p>Swagger UI is a great tool for describing and visualizing RESTful web services. It generates a small webpage, which documents your API and allows you to make test queries using JavaScript. Click here to see a small demo.</p>
+<p>In this article we’ll describe how to use Flask and Flask-RESTPlus to create a RESTful API which comes equipped with Swagger UI.</p>
+<p>Getting started<br>
+To show off the features of Flask-RESTPlus I prepared a small demo application. It’s a part of an API for a blogging platform, which allows you to manage blog posts and categories.</p>
+<p>Let’s start by downloading and running this demo on your system, then we’ll walk through the code.</p>
+<p>Prerequisites<br>
+You will need to have Python with Virtualenv and Git installed on your machine.</p>
+<p>I would recommend using Python 3, but Python 2 should work just fine.</p>
+<p>Setting up the demo application<br>
+To download and start the demo application issue the following commands. First clone the application code into any directory on your disk:</p>
+<pre><code>$ cd /path/to/my/workspace/
+$ git clone https://github.com/postrational/rest_api_demo
+$ cd rest_api_demo
+</code></pre>
+<p>Create a virtual Python environment in a directory named venv, activate the virtualenv and install required dependencies using pip:</p>
+<pre><code>$ virtualenv -p `which python3` venv
+$ source venv/bin/activate
+(venv) $ pip install -r requirements.txt</code></pre>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://acrofrank-b.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
