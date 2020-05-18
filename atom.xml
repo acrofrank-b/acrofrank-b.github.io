@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://acrofrank-b.github.io</id>
     <title>Chesterfieldian_PandaO &apos;s Notebook</title>
-    <updated>2020-05-15T04:54:35.590Z</updated>
+    <updated>2020-05-18T08:12:29.862Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://acrofrank-b.github.io"/>
     <link rel="self" href="https://acrofrank-b.github.io/atom.xml"/>
@@ -10,6 +10,32 @@
     <logo>https://acrofrank-b.github.io/images/avatar.png</logo>
     <icon>https://acrofrank-b.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Chesterfieldian_PandaO &apos;s Notebook</rights>
+    <entry>
+        <title type="html"><![CDATA[Nginx定时任务完成日志切割]]></title>
+        <id>https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/</id>
+        <link href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/">
+        </link>
+        <updated>2020-05-18T08:10:55.000Z</updated>
+        <content type="html"><![CDATA[<p>需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。<br>
+昨天时间命令 date -d yesterday +%Y%m%d<br>
+切割脚本内容：</p>
+<pre><code>#!/bin/bash
+# filename cutlog.sh
+
+DATE=$(date -d yesterday +%Y%m%d)
+LOG_PATH=/usr/local/nginx/logs/
+LOG_NAME=access.log
+BASE_PATH=/var/log/
+SAVE_LOG_NAME=${DATE}.${LOG_NAME}
+
+mv ${LOG_PATH}${LOG_NAME} ${BASE_PATH}${SAVE_LOG_NAME}
+
+kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
+</code></pre>
+<p>定时执行任务：</p>
+<pre><code>1/* 0 * * * /usr/bin/crontab /root/curlog.sh &gt;/dev/null 2&gt;&amp;1</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus]]></title>
         <id>https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/</id>

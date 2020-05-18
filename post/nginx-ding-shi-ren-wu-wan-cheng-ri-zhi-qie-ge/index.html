@@ -4,11 +4,17 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="This article outlines steps needed to create a REST API using Flask and Flask-RESTPlus. These tools combine into a frame..." />
+<meta name="description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
+昨天时间命令 date -d yesterday +%Y%m%d
+切割脚本内容：
+#!/bin/bash
+# filename cutlog.sh
+
+DATE=$(date -..." />
 <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
 <link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net/" crossorigin>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-<title>Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook</title>
+<title>Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook</title>
 
 
   
@@ -2201,31 +2207,49 @@ footer {
 
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<link rel="canonical" href="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/" />
+<link rel="canonical" href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/" />
 <link rel="shortcut icon" href="https://acrofrank-b.github.io/favicon.ico?v=1589789544179">
 
 <meta name="author" content="Chesterfieldian_PandaO">
 
-<meta itemprop="name" content="Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook">
-<meta itemprop="description" content="This article outlines steps needed to create a REST API using Flask and Flask-RESTPlus. These tools combine into a frame...">
+<meta itemprop="name" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
+<meta itemprop="description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
+昨天时间命令 date -d yesterday +%Y%m%d
+切割脚本内容：
+#!/bin/bash
+# filename cutlog.sh
+
+DATE=$(date -...">
 <meta itemprop="image" content="">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook">
-<meta name="twitter:description" content="This article outlines steps needed to create a REST API using Flask and Flask-RESTPlus. These tools combine into a frame...">
+<meta name="twitter:title" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
+<meta name="twitter:description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
+昨天时间命令 date -d yesterday +%Y%m%d
+切割脚本内容：
+#!/bin/bash
+# filename cutlog.sh
+
+DATE=$(date -...">
 <meta name="twitter:image" content="" />
-<meta name="twitter:image:alt" content="Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta name="twitter:image:alt" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
 
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/">
-<meta property="og:title" content="Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook">
-<meta property="og:description" content="This article outlines steps needed to create a REST API using Flask and Flask-RESTPlus. These tools combine into a frame...">
+<meta property="og:url" content="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/">
+<meta property="og:title" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
+<meta property="og:description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
+昨天时间命令 date -d yesterday +%Y%m%d
+切割脚本内容：
+#!/bin/bash
+# filename cutlog.sh
+
+DATE=$(date -...">
 <meta property="og:image" content="">
-<meta property="og:image:alt" content="Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta property="og:image:alt" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
 <meta property="og:site_name" content="Chesterfieldian_PandaO &#39;s Notebook">
 <meta property="og:locale" content="zh_CN">
-<meta property="tag" content="Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta property="tag" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
 
 
 <script type="application/ld+json">
@@ -2234,11 +2258,11 @@ footer {
 "@type": "BlogPosting",
 "mainEntityOfPage": {
   "@type": "WebPage",
-  "@id": "https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/"
+  "@id": "https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"
 },
-"headline": "Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook",
-"datePublished": "Fri May 15 2020 11:22:40 GMT+0800",
-"dateModified": "Fri May 15 2020 11:22:40 GMT+0800",
+"headline": "Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook",
+"datePublished": "Mon May 18 2020 16:10:55 GMT+0800",
+"dateModified": "Mon May 18 2020 16:10:55 GMT+0800",
 "author": {
   "@type": "Person",
   "name": "Chesterfieldian_PandaO"
@@ -2254,7 +2278,13 @@ footer {
 "image": [
 ""
 ],
-"description": "This article outlines steps needed to create a REST API using Flask and Flask-RESTPlus. These tools combine into a frame..."
+"description": "需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
+昨天时间命令 date -d yesterday +%Y%m%d
+切割脚本内容：
+#!/bin/bash
+# filename cutlog.sh
+
+DATE=$(date -..."
  }
 
 </script>
@@ -2270,8 +2300,8 @@ footer {
     },{
       "@type": "ListItem", 
       "position": 2, 
-      "name": "Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook",
-      "item": "https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/"  
+      "name": "Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook",
+      "item": "https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"  
     }]
   }
   </script>
@@ -2295,7 +2325,7 @@ footer {
   <PageMap>
     <DataObject type="action">
       <Attribute name="label" value="View"/>
-      <Attribute name="url" value="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/"/>
+      <Attribute name="url" value="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"/>
       <Attribute name="class" value="fullscreen"/>
     </DataObject>
   </PageMap>
@@ -2314,7 +2344,7 @@ footer {
 
 <script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
 
-<link rel="alternate" type="application/atom+xml" title="Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
 
 
 
@@ -2391,13 +2421,13 @@ footer {
       <div class="article-info">
         
         <h2 class="article-title">
-          <a href="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/">Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus</a>
+          <a href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/">Nginx定时任务完成日志切割</a>
         </h2>
         <div class="flex-box">
           <div class="flex-box post-meta-box">
             <a class="post-meta" href="https://acrofrank-b.github.io"><span
                 class="iconfont icon-mr-postmeta"></span>Chesterfieldian_PandaO</a>
-            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2020 年 05	月 15日</span>
+            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2020 年 05	月 18日</span>
             
 
 
@@ -2405,39 +2435,37 @@ footer {
         </div>
       </div>
       <div class="content">
-        <p>This article outlines steps needed to create a REST API using Flask and Flask-RESTPlus. These tools combine into a framework, which automates common tasks:</p>
-<p>API input validation<br>
-formatting output (as JSON)<br>
-generating interactive documentation (with Swagger UI)<br>
-turning Python exceptions into machine-readable HTTP responses<br>
-Flask<br>
-Flask is a web micro-framework written in Python. Since it’s a micro-framework, Flask does very little by itself. In contrast to a framework like Django, which takes the “batteries included” approach, Flask does not come with an ORM, serializers, user management or built-in internationalization. All these features and many others are available as Flask extensions, which make up a rich, but loosely coupled ecosystem.</p>
-<p>The challenge, then, for an aspiring Flask developer lies in picking the right extensions and combining them together to get just the right set of functions. In this article we will describe how to use the Flask-RESTPlus extension to create a Flask-based RESTful JSON API.</p>
-<p>Flask-RESTPlus<br>
-Flask-RESTPlus aims to make building REST APIs quick and easy. It provides just enough syntactic sugar to make your code readable and easy to maintain. Its killer feature is the ability to automatically generate interactive documentation for your API using Swagger UI.</p>
-<p>Swagger UI<br>
-Swagger UI is part of a suite of technologies for documenting RESTful web services. Swagger has evolved into the OpenAPI specification, currently curated by the Linux Foundation. Once you have an OpenAPI description of your web service, you can use software tools to generate documentation or even boilerplate code (client or server) in a variety of languages. Take a look at swagger.io for more information.</p>
-<p>Swagger UI is a great tool for describing and visualizing RESTful web services. It generates a small webpage, which documents your API and allows you to make test queries using JavaScript. Click here to see a small demo.</p>
-<p>In this article we’ll describe how to use Flask and Flask-RESTPlus to create a RESTful API which comes equipped with Swagger UI.</p>
-<p>Getting started<br>
-To show off the features of Flask-RESTPlus I prepared a small demo application. It’s a part of an API for a blogging platform, which allows you to manage blog posts and categories.</p>
-<p>Let’s start by downloading and running this demo on your system, then we’ll walk through the code.</p>
-<p>Prerequisites<br>
-You will need to have Python with Virtualenv and Git installed on your machine.</p>
-<p>I would recommend using Python 3, but Python 2 should work just fine.</p>
-<p>Setting up the demo application<br>
-To download and start the demo application issue the following commands. First clone the application code into any directory on your disk:</p>
-<pre><code>$ cd /path/to/my/workspace/
-$ git clone https://github.com/postrational/rest_api_demo
-$ cd rest_api_demo
+        <p>需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。<br>
+昨天时间命令 date -d yesterday +%Y%m%d<br>
+切割脚本内容：</p>
+<pre><code>#!/bin/bash
+# filename cutlog.sh
+
+DATE=$(date -d yesterday +%Y%m%d)
+LOG_PATH=/usr/local/nginx/logs/
+LOG_NAME=access.log
+BASE_PATH=/var/log/
+SAVE_LOG_NAME=${DATE}.${LOG_NAME}
+
+mv ${LOG_PATH}${LOG_NAME} ${BASE_PATH}${SAVE_LOG_NAME}
+
+kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
 </code></pre>
-<p>Create a virtual Python environment in a directory named venv, activate the virtualenv and install required dependencies using pip:</p>
-<pre><code>$ virtualenv -p `which python3` venv
-$ source venv/bin/activate
-(venv) $ pip install -r requirements.txt</code></pre>
+<p>定时执行任务：</p>
+<pre><code>1/* 0 * * * /usr/bin/crontab /root/curlog.sh &gt;/dev/null 2&gt;&amp;1</code></pre>
 
       </div>
 
+      
+      <nav class="post-nav">
+        
+        
+        <div class="nav-next">
+          <a class="post-nav-link-active" title="Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus" href="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/">下一篇文章</a>
+          
+
+        </div>
+      </nav>
       
 
       
