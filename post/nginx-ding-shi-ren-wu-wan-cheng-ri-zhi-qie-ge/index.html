@@ -2208,7 +2208,7 @@ footer {
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <link rel="canonical" href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/" />
-<link rel="shortcut icon" href="https://acrofrank-b.github.io/favicon.ico?v=1589789576202">
+<link rel="shortcut icon" href="https://acrofrank-b.github.io/favicon.ico?v=1589789624648">
 
 <meta name="author" content="Chesterfieldian_PandaO">
 
@@ -2452,7 +2452,11 @@ mv ${LOG_PATH}${LOG_NAME} ${BASE_PATH}${SAVE_LOG_NAME}
 kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
 </code></pre>
 <p>定时执行任务：</p>
-<pre><code>1/* 0 * * * /usr/bin/crontab /root/curlog.sh &gt;/dev/null 2&gt;&amp;1</code></pre>
+<pre><code>1/* 0 * * * /usr/bin/crontab /root/curlog.sh &gt;/dev/null 2&gt;&amp;1
+</code></pre>
+<blockquote>
+<p>https://www.kancloud.cn/curder/nginx/96672</p>
+</blockquote>
 
       </div>
 
@@ -2512,7 +2516,7 @@ kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
   <aside id="profile-2" class="widget widget_profile">
     <div class="profile-box">
       <div class="profile-avatar">
-        <amp-img src="https://acrofrank-b.github.io/images/avatar.png?v=1589789576202" alt="avatar"
+        <amp-img src="https://acrofrank-b.github.io/images/avatar.png?v=1589789624648" alt="avatar"
           layout="fill"></amp-img>
       </div>
       <div class="profile-content">
