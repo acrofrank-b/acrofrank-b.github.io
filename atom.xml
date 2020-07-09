@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://acrofrank-b.github.io</id>
     <title>Chesterfieldian_PandaO &apos;s Notebook</title>
-    <updated>2020-07-09T09:20:01.928Z</updated>
+    <updated>2020-07-09T09:37:10.459Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://acrofrank-b.github.io"/>
     <link rel="self" href="https://acrofrank-b.github.io/atom.xml"/>
@@ -10,6 +10,55 @@
     <logo>https://acrofrank-b.github.io/images/avatar.png</logo>
     <icon>https://acrofrank-b.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Chesterfieldian_PandaO &apos;s Notebook</rights>
+    <entry>
+        <title type="html"><![CDATA[认识数据仓库【维度模型设计】与【分层架构】]]></title>
+        <id>https://acrofrank-b.github.io/post/ren-shi-shu-ju-cang-ku-wei-du-mo-xing-she-ji-yu-fen-ceng-jia-gou/</id>
+        <link href="https://acrofrank-b.github.io/post/ren-shi-shu-ju-cang-ku-wei-du-mo-xing-she-ji-yu-fen-ceng-jia-gou/">
+        </link>
+        <updated>2020-07-09T09:28:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="数据仓库纬度模型设计">数据仓库纬度模型设计</h1>
+<h2 id="1-纬度建模基本概念">1. 纬度建模基本概念</h2>
+<p>维度模型是数据仓库领域大师Ralph Kimall所倡导，他的《数据仓库工具箱》，是数据仓库工程领域最流行的数仓建模经典。维度建模以分析决策的需求出发构建模型，构建的数据模型为分析需求服务，因此它重点解决用户如何更快速完成分析需求，同时还有较好的大规模复杂查询的响应性能。</p>
+<p>维度建模是专门应用于分析型数据库、数据仓库、数据集市建模的方法。数据集市可以理解为是一种&quot;小型数据仓库&quot;。</p>
+<h3 id="11-事实表">1.1 事实表</h3>
+<pre><code>    发生在现实世界中的操作型事件，其所产生的可度量数值，存储在事实表中。从最低的粒度级别来看，事实表行对应一个度量事件，反之亦然。
+
+    事实表表示对分析主题的度量。比如一次购买行为我们就可以理解为是一个事实。
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://acrofrank-b.github.io/post-images/1594286984931.png" alt="" loading="lazy"></figure>
+<p>图中的订单表就是一个事实表，可以理解他就是在现实中发生的一次操作型事件，每完成一个订单，就会在订单中增加一条记录。</p>
+<p>事实表的特征：表里没有存放实际的内容，他是一堆主键的集合，这些ID分别能对应到维度表中的一条记录。事实表包含了与各维度表相关联的外键，可与维度表关联。事实表的度量通常是数值类型（条/个/次），且记录数会不断增加，表数据规模迅速增长。</p>
+<h3 id="12-维度表">1.2 维度表</h3>
+<p>维度表示要对数据进行分析时所用的一个量，比如你要分析产品销售情况，你可以选择按类别进行分析,或按区域分析。这样的按…分析就构成一个维度。上图中的用户表、商家表、时间表这些都属于维度表。这些表都有一个唯一的主键，然后在表中存放了详细的数据信息。</p>
+<p>例如：交易金额分析分析</p>
+<p>男性用户的订单金额、联想商品的订单金额、第一季度的订单金额、手机的订单金额、家里下单的订单金额</p>
+<p>例如：学生分析</p>
+<p>姓张的同学有多少、男性的同学有多少、江苏的同学有多少、身高小于170cm的同学有多少、年龄小于23岁的同学有多少。</p>
+<p><strong>维度表的特征</strong>：每个维度表都包含单一的主键列。维度表的主键可以作为与之关联的任何事实表的外键，当然，维度表行的描述环境应与事实表行完全对应。维度表通常比较宽，是扁平型非规范表，包含大量的低粒度的文本属性。</p>
+<p>总的说来，在数据仓库中不需要严格遵守规范化设计原则。因为数据仓库的主导功能就是面向分析，以查询为主，不涉及数据更新操作。</p>
+<p>需要强调的是:</p>
+<p>事实表的设计是以能够正确记录历史信息为准则。</p>
+<p>维度表的设计是以能够以合适的角度来聚合主题内容为准则。</p>
+<h2 id="2-维度建模三种模式">2. 维度建模三种模式</h2>
+<h3 id="21-星形模型">2.1 星形模型</h3>
+<p>星形模式(Star Schema)是最常用的维度建模方式。星型模式是以事实表为中心，所有的维度表直接连接在事实表上，像星星一样。</p>
+<p>星形模式的维度建模由一个事实表和一组维度表成，且具有以下特点：</p>
+<pre><code>        a. 维表只和事实表关联，维表之间没有关联；
+        b. 每个维表主键为单列，且该主键放置在事实表中，作为两边连接的外键；
+        c. 以事实表为核心，维度表围绕核心呈星形分布；
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://acrofrank-b.github.io/post-images/1594287159659.png" alt="" loading="lazy"></figure>
+<h3 id="22-雪花模式">2.2 雪花模式</h3>
+<p>雪花模式(Snowflake Schema)是对星形模式的扩展。<strong>雪花模式的维度表可以拥有其他维度表的，虽然这种模型相比星型更规范一些，但是由于这种模型不太容易理解，维护成本比较高，而且性能方面需要关联多层维表，性能也比星型模型要低</strong>。所以一般不是很常用。</p>
+<figure data-type="image" tabindex="3"><img src="https://acrofrank-b.github.io/post-images/1594287233108.png" alt="" loading="lazy"></figure>
+<h3 id="23-星座模式">2.3 星座模式</h3>
+<p>星座模式是星型模式延伸而来，星型模式是基于一张事实表的，而星座模式是基于多张事实表的，而且共享维度信息。</p>
+<p>前面介绍的两种维度建模方法都是多维表对应单事实表，但在很多时候维度空间内的事实表不止一个，而一个维表也可能被多个事实表用到。<strong>在业务发展后期，绝大部分维度建模都采用的是星座模式。</strong></p>
+<blockquote>
+<p>https://blog.csdn.net/weixin_44318830/article/details/105956712</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[KafKa docker安装 ]]></title>
         <id>https://acrofrank-b.github.io/post/kafka-docker-an-zhuang/</id>
@@ -348,9 +397,8 @@ Serving Layer : Serving Layer用于合并Batch View和Real-time View中的结果
     系统从一个流中读取被我们定义为不可变的数据，分别灌入实时系统如Storm和批处理系统如Hadoop，然后各自输出自己的结果，这些结果会在查询端进行合并。当然，这种系统也可有很多变种，比如上图中的Kafka也可替换成其他的分布式队列，Storm也可以替换成其他的流式计算引擎。</p>
 <h1 id="kappa-架构">Kappa 架构</h1>
 <p>Kappa 架构是LinkedIn的Jay Kreps结合实际经验和个人体会，针对Lambda架构进行深度剖析，分析其优缺点并采用的替代方案。Lambda 架构的一个很明显的问题是需要维护两套分别跑在批处理和实时计算系统上面的代码，而且这两套代码得产出一模一样的结果。因此对于设计这类系统的人来讲，要面对的问题是：为什么我们不能改进流计算系统让它能处理这些问题？为什么不能让流系统来解决数据全量处理的问题？流计算天然的分布式特性注定其扩展性比较好，能否加大并发量来处理海量的历史数据？基于种种问题的考虑，Jay提出了Kappa这种替代方案。</p>
-<pre><code>![](https://acrofrank-b.github.io/post-images/1594264903817.png)
-
-那如何用流计算系统对全量数据进行重新计算，步骤如下：
+<figure data-type="image" tabindex="1"><img src="https://acrofrank-b.github.io/post-images/1594264903817.png" alt="" loading="lazy"></figure>
+<pre><code>那如何用流计算系统对全量数据进行重新计算，步骤如下：
 
     1、用Kafka或类似的分布式队列保存数据，需要几天数据量就保存几天。
 
@@ -358,8 +406,8 @@ Serving Layer : Serving Layer用于合并Batch View和Real-time View中的结果
 
     3、当新的实例完成后，停止老的流计算实例，并把老的一引起结果删除。
 </code></pre>
-<p>一个典型的Kappa架构如下：<br>
-<img src="https://acrofrank-b.github.io/post-images/1594264975376.png" alt="" loading="lazy"></p>
+<p>一个典型的Kappa架构如下：</p>
+<figure data-type="image" tabindex="2"><img src="https://acrofrank-b.github.io/post-images/1594264975376.png" alt="" loading="lazy"></figure>
 <p>Kafka或者其他消息中间件，具备保留多日数据的能力。正常情况下kafka都是吐出实时数据，经过实时处理系统，进入服务数据库（Serving DB）。</p>
 <p>当系统需要数据订正时，重放消息，修正实时处理代码，扩展实时处理系统的并发度，快速回溯过去历史数据。</p>
 <p>这样的架构简单，避免了维护两套系统还需要保持结果一致的问题，也很好解决了数据订正问题。</p>
