@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://acrofrank-b.github.io</id>
     <title>Chesterfieldian_PandaO &apos;s Notebook</title>
-    <updated>2020-05-18T08:13:47.283Z</updated>
+    <updated>2020-07-09T09:19:08.890Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://acrofrank-b.github.io"/>
     <link rel="self" href="https://acrofrank-b.github.io/atom.xml"/>
@@ -10,6 +10,154 @@
     <logo>https://acrofrank-b.github.io/images/avatar.png</logo>
     <icon>https://acrofrank-b.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Chesterfieldian_PandaO &apos;s Notebook</rights>
+    <entry>
+        <title type="html"><![CDATA[KafKa docker安装 ]]></title>
+        <id>https://acrofrank-b.github.io/post/kafka-docker-an-zhuang/</id>
+        <link href="https://acrofrank-b.github.io/post/kafka-docker-an-zhuang/">
+        </link>
+        <updated>2020-07-07T08:03:05.000Z</updated>
+        <content type="html"><![CDATA[<p>1.相关项目下载</p>
+<pre><code>docker pull wurstmeister/zookeeper  
+docker pull wurstmeister/kafka  
+</code></pre>
+<p>2启动zookeeper容器</p>
+<pre><code>docker run -d --name zookeeper -p 2181:2181 -t wurstmeister/zookeeper
+</code></pre>
+<p>3.启动KafKa 容器</p>
+<pre><code>docker run  -d --name kafka -p 9092:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=192.168.1.100:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.1.100:9092 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -t wurstmeister/kafka
+</code></pre>
+<p>KAFKA_BROKER_ID=0<br>
+KAFKA_ZOOKEEPER_CONNECT=192.168.1.100:2181<br>
+KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.1.100:9092<br>
+KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092<br>
+中间两个参数的192.168.204.128改为宿主机器的IP地址，如果不这么设置，可能会导致在别的机器上访问不到kafka。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hadoop Kylin 搭建]]></title>
+        <id>https://acrofrank-b.github.io/post/hadoop-kylin-da-jian/</id>
+        <link href="https://acrofrank-b.github.io/post/hadoop-kylin-da-jian/">
+        </link>
+        <updated>2020-06-23T08:36:21.000Z</updated>
+        <content type="html"><![CDATA[<p>1.下载java</p>
+<pre><code>CentOS使用yum安装jdk
+    1、查看系统版本命令
+        cat /etc/issue
+    2、查看yum包含的jdk版本
+        yum search java 或者 yum list java*
+
+    3、安装jdk
+        此次选择java-1.8.0-openjdk-devel.x86_64 : OpenJDK Development Environment
+
+        yum install java-1.8.0-openjdk-devel.x86_64
+    4、配置全局变量
+
+        打开配置文件,按insert进入编辑模式
+
+        vi /etc/profile
+        复制以下三行到文件中，按esc退出编辑模式，输入:wq保存退出（这里的JAVA_HOME以自己实际的目录为准）
+
+        export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el6_9.x86_64
+        export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+        export PATH=$PATH:$JAVA_HOME/bin
+
+        全局变量立即生效
+
+        source /etc/profile
+
+    5、查看安装jdk是否成功
+        java -version
+
+
+    https://segmentfault.com/a/1190000015389941
+</code></pre>
+<p>2.下载hadoop，官网地址：https://hadoop.apache.org/releases.html</p>
+<pre><code>wget http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
+sed -i 's#\# export JAVA_HOME=#export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el6_9.x86_64#g' hadoop-env.sh
+</code></pre>
+<p>3.hadoop配置详解 https://zhuanlan.zhihu.com/p/25472769</p>
+<ul>
+<li>https://www.cnblogs.com/caonw/p/12156488.html</li>
+<li>https://hbase.apache.org/book.html#hbase.encryption.server</li>
+<li>*** http://kylin.apache.org/docs/index.html</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[常见的大数据分析模型]]></title>
+        <id>https://acrofrank-b.github.io/post/chang-jian-de-da-shu-ju-fen-xi-mo-xing/</id>
+        <link href="https://acrofrank-b.github.io/post/chang-jian-de-da-shu-ju-fen-xi-mo-xing/">
+        </link>
+        <updated>2020-06-05T12:06:07.000Z</updated>
+        <content type="html"><![CDATA[<p>数据模型</p>
+<p>统计数据视角的实体模型通常指的是统计分析或大数据挖掘、深度学习、人工智能技术等种类的实体模型，这些模型是从科学研究视角去往界定的。</p>
+<p>1、降维</p>
+<p>对大量的数据和大规模的数据进行数据挖掘时，往往会面临“维度灾害”。 数据集的维度在无限地增加，但由于计算机的处理能力和速度有限，此外，数据集的多个维度之间可能存在共同的线性关系。这会立即造成学习模型的可扩展性不足，乃至许多那时候优化算法結果会无效。因而，人们必须减少层面总数并减少层面间共线性危害。</p>
+<p>数据降维也称为数据归约或数据约减。它的目的就是为了减少数据计算和建模中涉及的维数。有两种数据降维思想:一种是基于特征选择的降维，另一种是基于维度变换的降维。</p>
+<p>2、回归</p>
+<p>回归是一种数据分析方法，它是研究变量X对因变量Y的数据分析。我们了解的最简答的回归模型就是一元线性回归(只包含一个自变量和因变量，并且晾在这的关系可以用一条直线表示)。</p>
+<p>回归分析根据自变量的数量分为单回归模型和多元回归模型。根据影响是否是线性的，可以分为线性回归和非线性回归。</p>
+<p>3、聚类</p>
+<p>我们都听过“物以类聚，人以群分”这个词语，这个是聚类分析的基本思想。聚类分析法是大数据挖掘和测算中的基础每日任务，聚类分析法是将很多统计数据集中化具备“类似”特点的统计数据点区划为一致类型，并最后转化成好几个类的方式。大量数据集中必须有相似的数据点。基于这一假设，可以区分数据，并且可以找到每个数据集(分类)的特征。</p>
+<p>4、分类</p>
+<p>分类算法根据对己知类型训炼集的测算和剖析，从文中发觉类型标准，为此分折新统计数据的类型的类别优化算法。分类算法是解决分类问题的一种方法，是数据挖掘、机器学习和模式识别的一个重要研究领域。</p>
+<p>5、关联</p>
+<p>关联规则学习根据寻找最能解释数据变量之间关系的规则，在大量多元数据集中找到有用的关联规则。这是一种从大量数据中找出各种数据之间关系的方法。此外，它还可以挖掘基于时间序列的各种数据之间的关系。</p>
+<p>6、时间序列</p>
+<p>时间序列是一种用于研究数据随时间变化的算法，是一种常用的回归预测方法。原则是事物的连续性。所谓连续性(+本站微信networkworldweixin)，是指客观事物的发展具有规律性的连续性，事物的发展是按照其内在规律进行的。在一定的条件下，只要规则作用的条件不发生质的变化，事物的基本发展趋势就会持续到未来。</p>
+<p>7、异常数据检测</p>
+<p>在大多数数据挖掘或数据工作中，异常值将被视为“噪声”，并在数据预处理过程中消除，以避免其对整体数据评估和分析挖掘的影响。然而，在某些情况下，如果数据工作的目标是关注异常值，这些异常值将成为数据工作的焦点。</p>
+<p>数据集中的异常数据通常被称为异常点、异常值或孤立点等。典型的特征是这些数据的特征或规则与大多数数据不一致，表现出“异常”的特征。检测这些数据的方法称为异常检测。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Process Mining 流程挖掘/过程挖掘]]></title>
+        <id>https://acrofrank-b.github.io/post/guo-cheng-wa-jue-xiang-jie/</id>
+        <link href="https://acrofrank-b.github.io/post/guo-cheng-wa-jue-xiang-jie/">
+        </link>
+        <updated>2020-06-01T06:09:25.000Z</updated>
+        <content type="html"><![CDATA[<p>过程挖掘的起点是日志数据。过程挖掘技术假定系统能够连续地记录事件，每个事件代表一个活动（对应过程模型的某个任务），同时每个事件都和一个特定的案例（即一个过程实例）相关。事件日志还包括其它信息，如资源（即人或设备）的执行或初始化活动、事件的时间戳或者在事件涉及的数据元素（如订货数量等）。</p>
+<h1 id="1概述">1概述</h1>
+<p>XES是一种基于XML的事件日志标准。它旨在定义一种不同工具和应用领域下交换日志文件的格式。XES主要用于过程挖掘，但同时也可以用于广义数据挖掘、文本挖掘和静态分析。</p>
+<h1 id="2元模型">2元模型</h1>
+<figure data-type="image" tabindex="1"><img src="https://acrofrank-b.github.io/post-images/1590991844799.png" alt="" loading="lazy"></figure>
+<p>XES使用Log、Trace和Event三级结构来表示日志。其中Log为顶级节点，表示日志，包含多个Trace，即某些具体路径的集合。Trace是二级节点，表示一个具体的路径，包含多个Event，即具体事件的集合。Event为三级节点，表示一个具体的事件。例如，在一个访问网站的日志中，Log表示访问网站，Trace表示某个具体的用户的某次访问网站的过程，Event可以表示诸如“浏览器下载一张图片”的事件。<br>
+XES本身不具有对任何特定工具和应用领域的预定义。它们需要通过定义扩展，即Extension以及属性Attribute来进行表达。XES支持的属性类型包括字符串、日期、整型、浮点型、布尔、ID（即唯一值）等，同时它支持属性的嵌套。<br>
+XES使用Classifier标签对事件分类。</p>
+<h1 id="3-格式说明">3 格式说明</h1>
+<h2 id="31-基础结构">3.1 基础结构</h2>
+<p>XES基础结构标签如表3-1所示，基础结构属性如表3-2所示。<br>
+表3-1 XES基础结构标签表<br>
+| 标签名| 含义| 父标签| 举例<br>
+| ------ | ------ | ------ |<br>
+| og	日志，包含多个具体路径	| 无| 	<log xes.version=”1.1” xes. features=”nested-attributes”><br>
+| trace	路径，包含多个具体的事件	| log| 	<trace><br>
+| event	事件，原子类型，对应时间点而不是时间段	| trace| 	<event></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[celonis调研]]></title>
+        <id>https://acrofrank-b.github.io/post/celonis-diao-yan/</id>
+        <link href="https://acrofrank-b.github.io/post/celonis-diao-yan/">
+        </link>
+        <updated>2020-06-01T05:00:30.000Z</updated>
+        <content type="html"><![CDATA[<p>google 关键词 ：celonis architecture<br>
+https://developers.sap.com/showcases/process-mining-by-celonis.html</p>
+<h2 id="1celonis-关键技术">1.celonis 关键技术</h2>
+<pre><code>Key Technical Capabilities
+1.Actual Data 
+2.Real Time Analysis
+3.Drill Down
+</code></pre>
+<h2 id="2使用技术">2.使用技术</h2>
+<pre><code>Technologies Used
+SAP HANA
+C++
+Java application server
+Javascript on HTML5 and Angular JS
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Nginx定时任务完成日志切割]]></title>
         <id>https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/</id>
@@ -41,7 +189,7 @@ kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus]]></title>
+        <title type="html"><![CDATA[（待译）Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus]]></title>
         <id>https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/</id>
         <link href="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/">
         </link>
@@ -50,24 +198,24 @@ kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
 <p>API input validation<br>
 formatting output (as JSON)<br>
 generating interactive documentation (with Swagger UI)<br>
-turning Python exceptions into machine-readable HTTP responses<br>
-Flask<br>
-Flask is a web micro-framework written in Python. Since it’s a micro-framework, Flask does very little by itself. In contrast to a framework like Django, which takes the “batteries included” approach, Flask does not come with an ORM, serializers, user management or built-in internationalization. All these features and many others are available as Flask extensions, which make up a rich, but loosely coupled ecosystem.</p>
+turning Python exceptions into machine-readable HTTP responses</p>
+<h3 id="flask">Flask</h3>
+<p>Flask is a web micro-framework written in Python. Since it’s a micro-framework, Flask does very little by itself. In contrast to a framework like Django, which takes the “batteries included” approach, Flask does not come with an ORM, serializers, user management or built-in internationalization. All these features and many others are available as Flask extensions, which make up a rich, but loosely coupled ecosystem.</p>
 <p>The challenge, then, for an aspiring Flask developer lies in picking the right extensions and combining them together to get just the right set of functions. In this article we will describe how to use the Flask-RESTPlus extension to create a Flask-based RESTful JSON API.</p>
-<p>Flask-RESTPlus<br>
-Flask-RESTPlus aims to make building REST APIs quick and easy. It provides just enough syntactic sugar to make your code readable and easy to maintain. Its killer feature is the ability to automatically generate interactive documentation for your API using Swagger UI.</p>
-<p>Swagger UI<br>
-Swagger UI is part of a suite of technologies for documenting RESTful web services. Swagger has evolved into the OpenAPI specification, currently curated by the Linux Foundation. Once you have an OpenAPI description of your web service, you can use software tools to generate documentation or even boilerplate code (client or server) in a variety of languages. Take a look at swagger.io for more information.</p>
+<h3 id="flask-restplus">Flask-RESTPlus</h3>
+<p>Flask-RESTPlus aims to make building REST APIs quick and easy. It provides just enough syntactic sugar to make your code readable and easy to maintain. Its killer feature is the ability to automatically generate interactive documentation for your API using Swagger UI.</p>
+<h3 id="swagger-ui">Swagger UI</h3>
+<p>Swagger UI is part of a suite of technologies for documenting RESTful web services. Swagger has evolved into the OpenAPI specification, currently curated by the Linux Foundation. Once you have an OpenAPI description of your web service, you can use software tools to generate documentation or even boilerplate code (client or server) in a variety of languages. Take a look at swagger.io for more information.</p>
 <p>Swagger UI is a great tool for describing and visualizing RESTful web services. It generates a small webpage, which documents your API and allows you to make test queries using JavaScript. Click here to see a small demo.</p>
 <p>In this article we’ll describe how to use Flask and Flask-RESTPlus to create a RESTful API which comes equipped with Swagger UI.</p>
-<p>Getting started<br>
-To show off the features of Flask-RESTPlus I prepared a small demo application. It’s a part of an API for a blogging platform, which allows you to manage blog posts and categories.</p>
+<h3 id="getting-started">Getting started</h3>
+<p>To show off the features of Flask-RESTPlus I prepared a small demo application. It’s a part of an API for a blogging platform, which allows you to manage blog posts and categories.</p>
 <p>Let’s start by downloading and running this demo on your system, then we’ll walk through the code.</p>
-<p>Prerequisites<br>
-You will need to have Python with Virtualenv and Git installed on your machine.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>You will need to have Python with Virtualenv and Git installed on your machine.</p>
 <p>I would recommend using Python 3, but Python 2 should work just fine.</p>
-<p>Setting up the demo application<br>
-To download and start the demo application issue the following commands. First clone the application code into any directory on your disk:</p>
+<h3 id="setting-up-the-demo-application">Setting up the demo application</h3>
+<p>To download and start the demo application issue the following commands. First clone the application code into any directory on your disk:</p>
 <pre><code>$ cd /path/to/my/workspace/
 $ git clone https://github.com/postrational/rest_api_demo
 $ cd rest_api_demo
@@ -75,7 +223,209 @@ $ cd rest_api_demo
 <p>Create a virtual Python environment in a directory named venv, activate the virtualenv and install required dependencies using pip:</p>
 <pre><code>$ virtualenv -p `which python3` venv
 $ source venv/bin/activate
-(venv) $ pip install -r requirements.txt</code></pre>
+(venv) $ pip install -r requirements.txt
+</code></pre>
+<p>Now let’s set up the app for development and start it:</p>
+<pre><code>(venv) $ python setup.py develop
+(venv) $ python rest_api_demo/app.py
+</code></pre>
+<p>OK, everything should be ready. In your browser, open the URL http://localhost:8888/api/</p>
+<p>You should be greeted with a page similar to the following.<br>
+<img src="https://acrofrank-b.github.io/post-images/1594265361502.png" alt="" loading="lazy"></p>
+<h3 id="defining-your-flask-app-and-restplus-api">Defining your Flask app and RESTPlus API</h3>
+<p>Flask and Flask-RESTPlus make it very easy to get started. Minimal code required to create a working API is just 10 lines long.</p>
+<pre><code>from flask import Flask
+from flask_restplus import Resource, Api
+
+app = Flask(__name__)                  #  Create a Flask WSGI application
+api = Api(app)                         #  Create a Flask-RESTPlus API
+
+@api.route('/hello')                   #  Create a URL route to this resource
+class HelloWorld(Resource):            #  Create a RESTful resource
+def get(self):                     #  Create GET endpoint
+    return {'hello': 'world'}
+
+if __name__ == '__main__':
+    app.run(debug=True)                #  Start a development server
+</code></pre>
+<p>To make the code more maintainable, in our demo application we separate the app definition, API methods and other types of code into separate files. The following directory tree shows where each part of the logic is located.</p>
+<p>├── api                         #<br>
+│   ├── blog                    #  Blog-related API directory<br>
+│   │   ├── business.py         #<br>
+│   │   ├── endpoints           #  API namespaces and REST methods<br>
+│   │   │   ├── categories.py   #<br>
+│   │   │   └── posts.py        #<br>
+│   │   ├── parsers.py          #  Argument parsers<br>
+│   │   └── serializers.py      #  Output serializers<br>
+│   └── restplus.py             #  API bootstrap file<br>
+├── app.py                      #  Application bootstrap file<br>
+├── database                    #<br>
+│   └── models.py               #  Definition of SQLAlchemy models<br>
+├── db.sqlite                   #<br>
+└── settings.py                 #  Global app settings</p>
+<p>The definition of the RESTPlus API is stored in the file rest_api_demo/api/restplus.py, while the logic for configuring and starting the Flask app is stored in rest_api_demo/app.py.</p>
+<p>Take a look into the app.py file and the initialize_app function.</p>
+<pre><code>def initialize_app(flask_app):
+    configure_app(flask_app)
+
+    blueprint = Blueprint('api', __name__, url_prefix='/api')
+    api.init_app(blueprint)
+    api.add_namespace(blog_posts_namespace)
+    api.add_namespace(blog_categories_namespace)
+    flask_app.register_blueprint(blueprint)
+
+db.init_app(flask_app)
+</code></pre>
+<p>This function does a number of things, but in particular it sets up a Flask blueprint, which will host the API under the /api URL prefix. This allows you to separate the API part of your application from other parts. Your app’s frontend could be hosted in the same Flask application but under a different blueprint (perhaps with the / URL prefix).</p>
+<p>The RESTPlus API itself is also split into a number of separate namespaces. Each namespace has its own URL prefix and is stored in a separate file in the /api/blog/endpoints directory. In order to add these namespaces to the API, we need to use the api.add_namespace() function.</p>
+<p>initialize_app also sets configuration values loaded from settings.py and configures the app to use a database through the magic of Flask-SQLAlchemy.</p>
+<h3 id="defining-api-namespaces-and-restful-resources">Defining API namespaces and RESTful resources</h3>
+<p>Your API will be organized using API namespaces, RESTful resources and HTTP methods. Namespaces, as described above, allow your API definitions to be split into multiple files, each defining a part of the API with a different URL prefix.</p>
+<p>RESTful resources are used to organize the API into endpoints corresponding to different types of data used by your application. Each endpoint is called using a different HTTP method. Each method issues a different command to the API. For example, GET is used to fetch a resource from the API, PUT is used to update its information, DELETE to delete it.</p>
+<p>GET /blog/categories/1 – Retrieve category with ID 1<br>
+PUT /blog/categories/1 – Update the category with ID 1<br>
+DELTE /blog/categories/1 – Delete the category with ID 1<br>
+Resources usually have an associated collection endpoint, which can be used to create new resources (POST) or fetch lists (GET).</p>
+<p>GET /blog/categories – Retrieve a list of categories<br>
+POST /blog/categories – Create a new category<br>
+Using Flask-RESTPlus you can define an API for all of the endpoints listed above with the following block of code. We start by creating a namespace, we create a collection, a resource and associated HTTP methods.</p>
+<pre><code>ns = api.namespace('blog/categories', description='Operations related to blog categories')
+</code></pre>
+<p>@ns.route('/')<br>
+class CategoryCollection(Resource):</p>
+<pre><code>def get(self):
+    &quot;&quot;&quot;Returns list of blog categories.&quot;&quot;&quot;
+    return get_all_categories()
+
+@api.response(201, 'Category successfully created.')
+def post(self):
+    &quot;&quot;&quot;Creates a new blog category.&quot;&quot;&quot;
+    create_category(request.json)
+    return None, 201
+</code></pre>
+<p>@ns.route('/<a href="int:id">int:id</a>')<br>
+@api.response(404, 'Category not found.')<br>
+class CategoryItem(Resource):</p>
+<pre><code>def get(self, id):
+    &quot;&quot;&quot;Returns details of a category.&quot;&quot;&quot;
+    return get_category(id)
+
+@api.response(204, 'Category successfully updated.')
+def put(self, id):
+    &quot;&quot;&quot;Updates a blog category.&quot;&quot;&quot;
+    update_category(id, request.json)
+    return None, 204
+
+@api.response(204, 'Category successfully deleted.')
+def delete(self, id):
+    &quot;&quot;&quot;Deletes blog category.&quot;&quot;&quot;
+    delete_category(id)
+    return None, 204
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[大数据计算 Lambda架构 vs Kappa架构 到 Flink]]></title>
+        <id>https://acrofrank-b.github.io/post/lambda-jia-gou-vs-kappa-jia-gou/</id>
+        <link href="https://acrofrank-b.github.io/post/lambda-jia-gou-vs-kappa-jia-gou/">
+        </link>
+        <updated>2019-06-15T09:01:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="lambda-架构">Lambda 架构</h1>
+<p>Lambda 架构由Storm的作者Nathan Marz提出，其设计目的在于提供一个能满足大数据系统关键特性的架构，包括高容错、低延迟、可扩展等。其整合离线计算与实时计算，融合不可变性、读写分离和复杂性隔离等原则，可集成Hadoop, Kafka, Spark，Storm等各类大数据组件。<br>
+    Lambda 架构可分解为三层Layer，即Batch Layer, Real-Time(Speed) Layer和Serving Layer。<br>
+Batch Layer : 存储数据集，在数据集上预先计算查询函数，并构建查询所对应的View。Batch Layer可以很好的处理离线数据，但有很多场景数据是不断实时生成且需要实时查询处理，对于这情况， Speed Layer更为适合。<br>
+Speed Layer : Batch Layer处理的是全体数据集，而Speed Layer处理的是最近的增量数据流。Speed Layer为了效率，在接收到新的数据后会不断更新Real-time View，而Batch Layer是根据全体离线数据集直接得到Batch View。<br>
+Serving Layer : Serving Layer用于合并Batch View和Real-time View中的结果数据集到最终数据集。</p>
+<p>Lambda架构主要由这几部分构成：数据源（Kafka），数据处理（Storm，Hadoop），服务数据库（Serving DB）。其中数据源和服务数据库是整个架构数据的入口和出口。数据处理则是分为在在线处理和离线处理两部分。</p>
+<p>当数据通过kafka消息中间件，进入Lambda架构后，会同时进入离线处理（Hadoop）和实时处理（Storm）两个处理模块。离线处理进行批计算，将大量T+1的数据进行汇总。而实时处理则是进行流处理或者是微批处理，计算秒级、分钟级的结果。最后都录入到服务数据库（Serving DB）中进行汇总，暴露给上层服务调用。</p>
+<p>Lambda架构的好处是：架构简单，很好的结合了离线批处理和实时流处理的优点，稳定且实时计算成本可控。</p>
+<p>此外，它对数据订正也很友好。如果后期数据统计口径变更，重新运行离线任务，则可以很快的将历史数据订正为最新的口径。</p>
+<p>然而，Lambda也有很多问题。</p>
+<p>其中Jay Kreps认为最突出的问题就是需要同时维护实时处理和离线处理两套代码的同时还要保证两套处理结果保持一致。这无疑是非常让人头疼的。</p>
+<p>一个典型的Lambda架构如下，<br>
+<img src="https://acrofrank-b.github.io/post-images/1594198986179.png" alt="" loading="lazy"><br>
+    这种架构主要面向的场景是逻辑比较复杂同时又希望延迟比较低的异步处理程序，比如搜索引擎、推荐引擎等。<br>
+    系统从一个流中读取被我们定义为不可变的数据，分别灌入实时系统如Storm和批处理系统如Hadoop，然后各自输出自己的结果，这些结果会在查询端进行合并。当然，这种系统也可有很多变种，比如上图中的Kafka也可替换成其他的分布式队列，Storm也可以替换成其他的流式计算引擎。</p>
+<h1 id="kappa-架构">Kappa 架构</h1>
+<p>Kappa 架构是LinkedIn的Jay Kreps结合实际经验和个人体会，针对Lambda架构进行深度剖析，分析其优缺点并采用的替代方案。Lambda 架构的一个很明显的问题是需要维护两套分别跑在批处理和实时计算系统上面的代码，而且这两套代码得产出一模一样的结果。因此对于设计这类系统的人来讲，要面对的问题是：为什么我们不能改进流计算系统让它能处理这些问题？为什么不能让流系统来解决数据全量处理的问题？流计算天然的分布式特性注定其扩展性比较好，能否加大并发量来处理海量的历史数据？基于种种问题的考虑，Jay提出了Kappa这种替代方案。</p>
+<pre><code>![](https://acrofrank-b.github.io/post-images/1594264903817.png)
+
+那如何用流计算系统对全量数据进行重新计算，步骤如下：
+
+    1、用Kafka或类似的分布式队列保存数据，需要几天数据量就保存几天。
+
+    2、当需要全量计算时，重新起一个流计算实例，从头开始读取数据进行处理，并输出到一个结果存储中。
+
+    3、当新的实例完成后，停止老的流计算实例，并把老的一引起结果删除。
+</code></pre>
+<p>一个典型的Kappa架构如下：<br>
+<img src="https://acrofrank-b.github.io/post-images/1594264975376.png" alt="" loading="lazy"></p>
+<p>Kafka或者其他消息中间件，具备保留多日数据的能力。正常情况下kafka都是吐出实时数据，经过实时处理系统，进入服务数据库（Serving DB）。</p>
+<p>当系统需要数据订正时，重放消息，修正实时处理代码，扩展实时处理系统的并发度，快速回溯过去历史数据。</p>
+<p>这样的架构简单，避免了维护两套系统还需要保持结果一致的问题，也很好解决了数据订正问题。</p>
+<p>但它也有它的问题：</p>
+<p>1、消息中间件缓存的数据量和回溯数据有性能瓶颈。通常算法需要过去180天的数据，如果都存在消息中间件，无疑有非常大的压力。同时，一次性回溯订正180天级别的数据，对实时计算的资源消耗也非常大。</p>
+<p>2、在实时数据处理时，遇到大量不同的实时流进行关联时，非常依赖实时计算系统的能力，很可能因为数据流先后顺序问题，导致数据丢失。</p>
+<p>例如：一个消费者在淘宝网上搜索商品。正常来说，搜索结果里，商品曝光数据应该早于用户点击数据产出。然而因为可能会因为系统延迟，导致相同商品的曝光数据晚于点击数据进入实时处理系统。如果开发人员没意识到这样的问题，很可能会代码设计成曝光数据等待点击数据进行关联。关联不上曝光数据的点击数据就很容易被一些简单的条件判断语句抛弃。</p>
+<p>对于离线处理来说，消息都是批处理，不存在关联不上的情况。在Lambda架构下，即使实时部分数据处理存在一定丢失，但因为离线数据占绝对优势，所以对整体结果影响很小。即使当天的实时处理结果存在问题，也会在第二天被离线处理的正确结果进行覆盖。保证了最终结果正确。</p>
+<h1 id="flink">Flink</h1>
+<p>Lambda架构和Kappa架构的优缺点对比：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lambda</td>
+<td>架构简单</td>
+<td>实时、离线数据很难保持一致结果</td>
+</tr>
+<tr>
+<td></td>
+<td>很好的结合了离线批处理和实时流处理的优点</td>
+<td>需要维护两套系统</td>
+</tr>
+<tr>
+<td></td>
+<td>稳定且实时计算成本可控</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>离线数据易于订正</td>
+<td></td>
+</tr>
+<tr>
+<td>Kappa</td>
+<td>只需要维护实时处理模块</td>
+<td>强依赖消息中间件缓存能力</td>
+</tr>
+<tr>
+<td></td>
+<td>可以通过消息重放</td>
+<td>实时数据处理时存在丢失数据可能</td>
+</tr>
+<tr>
+<td></td>
+<td>无需离线实时数据合并</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Kappa在抛弃了离线数据处理模块的时候，同时抛弃了离线计算更加稳定可靠的特点。Lambda虽然保证了离线计算的稳定性，但双系统的维护成本高且两套代码带来后期运维困难。</p>
+<p>为了实现流批处理一体化，Blink采用的将流处理视为批处理的一种特殊形式。因此在内部维持了若干张张流表。通过缓存时间进行约束，限定在一个时间段内的数据组成的表，从而将实时流转为微批处理。</p>
+<p>理论上只要把时间窗口开的足够大，Flink的流表可以存下上百日的数据，从而保证微批处理的“微”足够大可以替换掉离线处理数据。</p>
+<p>但这样做存在几个问题：</p>
+<pre><code>1.Flink的流表是放在内存中，不做持久化处理的。一旦任务发生异常，内存数据丢失，Flink是需要回溯上游消息流，从而转为Kappa的结构。
+
+2.数据窗口开的越大，内存成本越高。受限于成本，对大量数据处理仍然有可支持的物理空间上限。
+
+3.下游接收的通常都是处理结果，对于内存中的流表数据是无法直接访问的。这样无形中增加了开发成本。
+</code></pre>
 ]]></content>
     </entry>
 </feed>

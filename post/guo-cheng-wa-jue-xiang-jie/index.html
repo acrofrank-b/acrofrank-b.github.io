@@ -4,17 +4,11 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -..." />
+<meta name="description" content="过程挖掘的起点是日志数据。过程挖掘技术假定系统能够连续地记录事件，每个事件代表一个活动（对应过程模型的某个任务），同时每个事件都和一个特定的案例（即一个过程实例）相关。事件日志还包括其它信息，如资源（即人或设备）的执行或初始化活动、事件的时..." />
 <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
 <link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net/" crossorigin>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-<title>Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook</title>
+<title>Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook</title>
 
 
   
@@ -2207,49 +2201,31 @@ footer {
 
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<link rel="canonical" href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/" />
+<link rel="canonical" href="https://acrofrank-b.github.io/post/guo-cheng-wa-jue-xiang-jie/" />
 <link rel="shortcut icon" href="https://acrofrank-b.github.io/favicon.ico?v=1594286340680">
 
 <meta name="author" content="Chesterfieldian_PandaO">
 
-<meta itemprop="name" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
-<meta itemprop="description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -...">
+<meta itemprop="name" content="Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook">
+<meta itemprop="description" content="过程挖掘的起点是日志数据。过程挖掘技术假定系统能够连续地记录事件，每个事件代表一个活动（对应过程模型的某个任务），同时每个事件都和一个特定的案例（即一个过程实例）相关。事件日志还包括其它信息，如资源（即人或设备）的执行或初始化活动、事件的时...">
 <meta itemprop="image" content="">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
-<meta name="twitter:description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -...">
+<meta name="twitter:title" content="Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook">
+<meta name="twitter:description" content="过程挖掘的起点是日志数据。过程挖掘技术假定系统能够连续地记录事件，每个事件代表一个活动（对应过程模型的某个任务），同时每个事件都和一个特定的案例（即一个过程实例）相关。事件日志还包括其它信息，如资源（即人或设备）的执行或初始化活动、事件的时...">
 <meta name="twitter:image" content="" />
-<meta name="twitter:image:alt" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta name="twitter:image:alt" content="Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook" />
 
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/">
-<meta property="og:title" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
-<meta property="og:description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -...">
+<meta property="og:url" content="https://acrofrank-b.github.io/post/guo-cheng-wa-jue-xiang-jie/">
+<meta property="og:title" content="Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook">
+<meta property="og:description" content="过程挖掘的起点是日志数据。过程挖掘技术假定系统能够连续地记录事件，每个事件代表一个活动（对应过程模型的某个任务），同时每个事件都和一个特定的案例（即一个过程实例）相关。事件日志还包括其它信息，如资源（即人或设备）的执行或初始化活动、事件的时...">
 <meta property="og:image" content="">
-<meta property="og:image:alt" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta property="og:image:alt" content="Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook" />
 <meta property="og:site_name" content="Chesterfieldian_PandaO &#39;s Notebook">
 <meta property="og:locale" content="zh_CN">
-<meta property="tag" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta property="tag" content="Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook" />
 
 
 <script type="application/ld+json">
@@ -2258,11 +2234,11 @@ DATE=$(date -...">
 "@type": "BlogPosting",
 "mainEntityOfPage": {
   "@type": "WebPage",
-  "@id": "https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"
+  "@id": "https://acrofrank-b.github.io/post/guo-cheng-wa-jue-xiang-jie/"
 },
-"headline": "Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook",
-"datePublished": "Mon May 18 2020 16:10:55 GMT+0800",
-"dateModified": "Mon May 18 2020 16:10:55 GMT+0800",
+"headline": "Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook",
+"datePublished": "Mon Jun 01 2020 14:09:25 GMT+0800",
+"dateModified": "Mon Jun 01 2020 14:09:25 GMT+0800",
 "author": {
   "@type": "Person",
   "name": "Chesterfieldian_PandaO"
@@ -2278,13 +2254,7 @@ DATE=$(date -...">
 "image": [
 ""
 ],
-"description": "需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -..."
+"description": "过程挖掘的起点是日志数据。过程挖掘技术假定系统能够连续地记录事件，每个事件代表一个活动（对应过程模型的某个任务），同时每个事件都和一个特定的案例（即一个过程实例）相关。事件日志还包括其它信息，如资源（即人或设备）的执行或初始化活动、事件的时..."
  }
 
 </script>
@@ -2300,8 +2270,8 @@ DATE=$(date -..."
     },{
       "@type": "ListItem", 
       "position": 2, 
-      "name": "Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook",
-      "item": "https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"  
+      "name": "Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook",
+      "item": "https://acrofrank-b.github.io/post/guo-cheng-wa-jue-xiang-jie/"  
     }]
   }
   </script>
@@ -2325,7 +2295,7 @@ DATE=$(date -..."
   <PageMap>
     <DataObject type="action">
       <Attribute name="label" value="View"/>
-      <Attribute name="url" value="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"/>
+      <Attribute name="url" value="https://acrofrank-b.github.io/post/guo-cheng-wa-jue-xiang-jie/"/>
       <Attribute name="class" value="fullscreen"/>
     </DataObject>
   </PageMap>
@@ -2344,7 +2314,7 @@ DATE=$(date -..."
 
 <script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
 
-<link rel="alternate" type="application/atom+xml" title="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
 
 
 
@@ -2421,13 +2391,13 @@ DATE=$(date -..."
       <div class="article-info">
         
         <h2 class="article-title">
-          <a href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/">Nginx定时任务完成日志切割</a>
+          <a href="https://acrofrank-b.github.io/post/guo-cheng-wa-jue-xiang-jie/">Process Mining 流程挖掘/过程挖掘</a>
         </h2>
         <div class="flex-box">
           <div class="flex-box post-meta-box">
             <a class="post-meta" href="https://acrofrank-b.github.io"><span
                 class="iconfont icon-mr-postmeta"></span>Chesterfieldian_PandaO</a>
-            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2020 年 05	月 18日</span>
+            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2020 年 06	月 1日</span>
             
 
 
@@ -2435,28 +2405,23 @@ DATE=$(date -..."
         </div>
       </div>
       <div class="content">
-        <p>需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。<br>
-昨天时间命令 date -d yesterday +%Y%m%d<br>
-切割脚本内容：</p>
-<pre><code>#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -d yesterday +%Y%m%
-LOG_PATH=/usr/local/nginx/logs/
-LOG_NAME=access.log
-BASE_PATH=/var/log/
-SAVE_LOG_NAME=${DATE}.${LOG_NAME}
-
-mv ${LOG_PATH}${LOG_NAME} ${BASE_PATH}${SAVE_LOG_NAME}
-
-kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
-</code></pre>
-<p>定时执行任务：</p>
-<pre><code>1/* 0 * * * /usr/bin/crontab /root/curlog.sh &gt;/dev/null 2&gt;&amp;1
-</code></pre>
-<blockquote>
-<p>https://www.kancloud.cn/curder/nginx/96672</p>
-</blockquote>
+        <p>过程挖掘的起点是日志数据。过程挖掘技术假定系统能够连续地记录事件，每个事件代表一个活动（对应过程模型的某个任务），同时每个事件都和一个特定的案例（即一个过程实例）相关。事件日志还包括其它信息，如资源（即人或设备）的执行或初始化活动、事件的时间戳或者在事件涉及的数据元素（如订货数量等）。</p>
+<h1 id="1概述">1概述</h1>
+<p>XES是一种基于XML的事件日志标准。它旨在定义一种不同工具和应用领域下交换日志文件的格式。XES主要用于过程挖掘，但同时也可以用于广义数据挖掘、文本挖掘和静态分析。</p>
+<h1 id="2元模型">2元模型</h1>
+<figure data-type="image" tabindex="1"><img src="https://acrofrank-b.github.io/post-images/1590991844799.png" alt="" loading="lazy"></figure>
+<p>XES使用Log、Trace和Event三级结构来表示日志。其中Log为顶级节点，表示日志，包含多个Trace，即某些具体路径的集合。Trace是二级节点，表示一个具体的路径，包含多个Event，即具体事件的集合。Event为三级节点，表示一个具体的事件。例如，在一个访问网站的日志中，Log表示访问网站，Trace表示某个具体的用户的某次访问网站的过程，Event可以表示诸如“浏览器下载一张图片”的事件。<br>
+XES本身不具有对任何特定工具和应用领域的预定义。它们需要通过定义扩展，即Extension以及属性Attribute来进行表达。XES支持的属性类型包括字符串、日期、整型、浮点型、布尔、ID（即唯一值）等，同时它支持属性的嵌套。<br>
+XES使用Classifier标签对事件分类。</p>
+<h1 id="3-格式说明">3 格式说明</h1>
+<h2 id="31-基础结构">3.1 基础结构</h2>
+<p>XES基础结构标签如表3-1所示，基础结构属性如表3-2所示。<br>
+表3-1 XES基础结构标签表<br>
+| 标签名| 含义| 父标签| 举例<br>
+| ------ | ------ | ------ |<br>
+| og	日志，包含多个具体路径	| 无| 	<log xes.version=”1.1” xes. features=”nested-attributes”><br>
+| trace	路径，包含多个具体的事件	| log| 	<trace><br>
+| event	事件，原子类型，对应时间点而不是时间段	| trace| 	<event></p>
 
       </div>
 
@@ -2464,12 +2429,12 @@ kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
       <nav class="post-nav">
         
         <div class="nav-previous">
-          <a class="post-nav-link-active" title="celonis调研" href="https://acrofrank-b.github.io/post/celonis-diao-yan/">上一篇文章</a>
+          <a class="post-nav-link-active" title="常见的大数据分析模型" href="https://acrofrank-b.github.io/post/chang-jian-de-da-shu-ju-fen-xi-mo-xing/">上一篇文章</a>
         </div>
         
         
         <div class="nav-next">
-          <a class="post-nav-link-active" title="（待译）Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus" href="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/">下一篇文章</a>
+          <a class="post-nav-link-active" title="celonis调研" href="https://acrofrank-b.github.io/post/celonis-diao-yan/">下一篇文章</a>
           
 
         </div>

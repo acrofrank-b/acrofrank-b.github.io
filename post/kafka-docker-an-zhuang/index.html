@@ -4,17 +4,16 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
+<meta name="description" content="1.相关项目下载
+docker pull wurstmeister/zookeeper  
+docker pull wurstmeister/kafka  
 
-DATE=$(date -..." />
+2启动zookeeper容器
+docker run -d --name zook..." />
 <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
 <link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net/" crossorigin>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-<title>Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook</title>
+<title>KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook</title>
 
 
   
@@ -2207,49 +2206,46 @@ footer {
 
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<link rel="canonical" href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/" />
+<link rel="canonical" href="https://acrofrank-b.github.io/post/kafka-docker-an-zhuang/" />
 <link rel="shortcut icon" href="https://acrofrank-b.github.io/favicon.ico?v=1594286340680">
 
 <meta name="author" content="Chesterfieldian_PandaO">
 
-<meta itemprop="name" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
-<meta itemprop="description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
+<meta itemprop="name" content="KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook">
+<meta itemprop="description" content="1.相关项目下载
+docker pull wurstmeister/zookeeper  
+docker pull wurstmeister/kafka  
 
-DATE=$(date -...">
+2启动zookeeper容器
+docker run -d --name zook...">
 <meta itemprop="image" content="">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
-<meta name="twitter:description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
+<meta name="twitter:title" content="KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook">
+<meta name="twitter:description" content="1.相关项目下载
+docker pull wurstmeister/zookeeper  
+docker pull wurstmeister/kafka  
 
-DATE=$(date -...">
+2启动zookeeper容器
+docker run -d --name zook...">
 <meta name="twitter:image" content="" />
-<meta name="twitter:image:alt" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta name="twitter:image:alt" content="KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook" />
 
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/">
-<meta property="og:title" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
-<meta property="og:description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
+<meta property="og:url" content="https://acrofrank-b.github.io/post/kafka-docker-an-zhuang/">
+<meta property="og:title" content="KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook">
+<meta property="og:description" content="1.相关项目下载
+docker pull wurstmeister/zookeeper  
+docker pull wurstmeister/kafka  
 
-DATE=$(date -...">
+2启动zookeeper容器
+docker run -d --name zook...">
 <meta property="og:image" content="">
-<meta property="og:image:alt" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta property="og:image:alt" content="KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook" />
 <meta property="og:site_name" content="Chesterfieldian_PandaO &#39;s Notebook">
 <meta property="og:locale" content="zh_CN">
-<meta property="tag" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta property="tag" content="KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook" />
 
 
 <script type="application/ld+json">
@@ -2258,11 +2254,11 @@ DATE=$(date -...">
 "@type": "BlogPosting",
 "mainEntityOfPage": {
   "@type": "WebPage",
-  "@id": "https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"
+  "@id": "https://acrofrank-b.github.io/post/kafka-docker-an-zhuang/"
 },
-"headline": "Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook",
-"datePublished": "Mon May 18 2020 16:10:55 GMT+0800",
-"dateModified": "Mon May 18 2020 16:10:55 GMT+0800",
+"headline": "KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook",
+"datePublished": "Tue Jul 07 2020 16:03:05 GMT+0800",
+"dateModified": "Tue Jul 07 2020 16:03:05 GMT+0800",
 "author": {
   "@type": "Person",
   "name": "Chesterfieldian_PandaO"
@@ -2278,13 +2274,12 @@ DATE=$(date -...">
 "image": [
 ""
 ],
-"description": "需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
+"description": "1.相关项目下载
+docker pull wurstmeister/zookeeper  
+docker pull wurstmeister/kafka  
 
-DATE=$(date -..."
+2启动zookeeper容器
+docker run -d --name zook..."
  }
 
 </script>
@@ -2300,8 +2295,8 @@ DATE=$(date -..."
     },{
       "@type": "ListItem", 
       "position": 2, 
-      "name": "Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook",
-      "item": "https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"  
+      "name": "KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook",
+      "item": "https://acrofrank-b.github.io/post/kafka-docker-an-zhuang/"  
     }]
   }
   </script>
@@ -2325,7 +2320,7 @@ DATE=$(date -..."
   <PageMap>
     <DataObject type="action">
       <Attribute name="label" value="View"/>
-      <Attribute name="url" value="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"/>
+      <Attribute name="url" value="https://acrofrank-b.github.io/post/kafka-docker-an-zhuang/"/>
       <Attribute name="class" value="fullscreen"/>
     </DataObject>
   </PageMap>
@@ -2344,7 +2339,7 @@ DATE=$(date -..."
 
 <script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
 
-<link rel="alternate" type="application/atom+xml" title="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="KafKa docker安装  | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
 
 
 
@@ -2421,13 +2416,13 @@ DATE=$(date -..."
       <div class="article-info">
         
         <h2 class="article-title">
-          <a href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/">Nginx定时任务完成日志切割</a>
+          <a href="https://acrofrank-b.github.io/post/kafka-docker-an-zhuang/">KafKa docker安装 </a>
         </h2>
         <div class="flex-box">
           <div class="flex-box post-meta-box">
             <a class="post-meta" href="https://acrofrank-b.github.io"><span
                 class="iconfont icon-mr-postmeta"></span>Chesterfieldian_PandaO</a>
-            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2020 年 05	月 18日</span>
+            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2020 年 07	月 7日</span>
             
 
 
@@ -2435,41 +2430,30 @@ DATE=$(date -..."
         </div>
       </div>
       <div class="content">
-        <p>需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。<br>
-昨天时间命令 date -d yesterday +%Y%m%d<br>
-切割脚本内容：</p>
-<pre><code>#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -d yesterday +%Y%m%
-LOG_PATH=/usr/local/nginx/logs/
-LOG_NAME=access.log
-BASE_PATH=/var/log/
-SAVE_LOG_NAME=${DATE}.${LOG_NAME}
-
-mv ${LOG_PATH}${LOG_NAME} ${BASE_PATH}${SAVE_LOG_NAME}
-
-kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
+        <p>1.相关项目下载</p>
+<pre><code>docker pull wurstmeister/zookeeper  
+docker pull wurstmeister/kafka  
 </code></pre>
-<p>定时执行任务：</p>
-<pre><code>1/* 0 * * * /usr/bin/crontab /root/curlog.sh &gt;/dev/null 2&gt;&amp;1
+<p>2启动zookeeper容器</p>
+<pre><code>docker run -d --name zookeeper -p 2181:2181 -t wurstmeister/zookeeper
 </code></pre>
-<blockquote>
-<p>https://www.kancloud.cn/curder/nginx/96672</p>
-</blockquote>
+<p>3.启动KafKa 容器</p>
+<pre><code>docker run  -d --name kafka -p 9092:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=192.168.1.100:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.1.100:9092 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -t wurstmeister/kafka
+</code></pre>
+<p>KAFKA_BROKER_ID=0<br>
+KAFKA_ZOOKEEPER_CONNECT=192.168.1.100:2181<br>
+KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.1.100:9092<br>
+KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092<br>
+中间两个参数的192.168.204.128改为宿主机器的IP地址，如果不这么设置，可能会导致在别的机器上访问不到kafka。</p>
 
       </div>
 
       
       <nav class="post-nav">
         
-        <div class="nav-previous">
-          <a class="post-nav-link-active" title="celonis调研" href="https://acrofrank-b.github.io/post/celonis-diao-yan/">上一篇文章</a>
-        </div>
-        
         
         <div class="nav-next">
-          <a class="post-nav-link-active" title="（待译）Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus" href="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/">下一篇文章</a>
+          <a class="post-nav-link-active" title="Hadoop Kylin 搭建" href="https://acrofrank-b.github.io/post/hadoop-kylin-da-jian/">下一篇文章</a>
           
 
         </div>

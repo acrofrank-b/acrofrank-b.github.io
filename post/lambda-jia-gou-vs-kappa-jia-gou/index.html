@@ -4,17 +4,12 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -..." />
+<meta name="description" content="Lambda 架构
+Lambda 架构由Storm的作者Nathan Marz提出，其设计目的在于提供一个能满足大数据系统关键特性的架构，包括高容错、低延迟、可扩展等。其整合离线计算与实时计算，融合不可变性、读写分离和复杂性隔离等原则，可集..." />
 <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
 <link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net/" crossorigin>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-<title>Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook</title>
+<title>大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook</title>
 
 
   
@@ -2207,49 +2202,34 @@ footer {
 
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<link rel="canonical" href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/" />
+<link rel="canonical" href="https://acrofrank-b.github.io/post/lambda-jia-gou-vs-kappa-jia-gou/" />
 <link rel="shortcut icon" href="https://acrofrank-b.github.io/favicon.ico?v=1594286340680">
 
 <meta name="author" content="Chesterfieldian_PandaO">
 
-<meta itemprop="name" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
-<meta itemprop="description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -...">
-<meta itemprop="image" content="">
+<meta itemprop="name" content="大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook">
+<meta itemprop="description" content="Lambda 架构
+Lambda 架构由Storm的作者Nathan Marz提出，其设计目的在于提供一个能满足大数据系统关键特性的架构，包括高容错、低延迟、可扩展等。其整合离线计算与实时计算，融合不可变性、读写分离和复杂性隔离等原则，可集...">
+<meta itemprop="image" content="https://acrofrank-b.github.io/post-images/lambda-jia-gou-vs-kappa-jia-gou.png">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
-<meta name="twitter:description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -...">
-<meta name="twitter:image" content="" />
-<meta name="twitter:image:alt" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta name="twitter:title" content="大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook">
+<meta name="twitter:description" content="Lambda 架构
+Lambda 架构由Storm的作者Nathan Marz提出，其设计目的在于提供一个能满足大数据系统关键特性的架构，包括高容错、低延迟、可扩展等。其整合离线计算与实时计算，融合不可变性、读写分离和复杂性隔离等原则，可集...">
+<meta name="twitter:image" content="https://acrofrank-b.github.io/post-images/lambda-jia-gou-vs-kappa-jia-gou.png" />
+<meta name="twitter:image:alt" content="大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook" />
 
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/">
-<meta property="og:title" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook">
-<meta property="og:description" content="需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -...">
-<meta property="og:image" content="">
-<meta property="og:image:alt" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta property="og:url" content="https://acrofrank-b.github.io/post/lambda-jia-gou-vs-kappa-jia-gou/">
+<meta property="og:title" content="大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook">
+<meta property="og:description" content="Lambda 架构
+Lambda 架构由Storm的作者Nathan Marz提出，其设计目的在于提供一个能满足大数据系统关键特性的架构，包括高容错、低延迟、可扩展等。其整合离线计算与实时计算，融合不可变性、读写分离和复杂性隔离等原则，可集...">
+<meta property="og:image" content="https://acrofrank-b.github.io/post-images/lambda-jia-gou-vs-kappa-jia-gou.png">
+<meta property="og:image:alt" content="大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook" />
 <meta property="og:site_name" content="Chesterfieldian_PandaO &#39;s Notebook">
 <meta property="og:locale" content="zh_CN">
-<meta property="tag" content="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook" />
+<meta property="tag" content="大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook" />
 
 
 <script type="application/ld+json">
@@ -2258,11 +2238,11 @@ DATE=$(date -...">
 "@type": "BlogPosting",
 "mainEntityOfPage": {
   "@type": "WebPage",
-  "@id": "https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"
+  "@id": "https://acrofrank-b.github.io/post/lambda-jia-gou-vs-kappa-jia-gou/"
 },
-"headline": "Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook",
-"datePublished": "Mon May 18 2020 16:10:55 GMT+0800",
-"dateModified": "Mon May 18 2020 16:10:55 GMT+0800",
+"headline": "大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook",
+"datePublished": "Sat Jun 15 2019 17:01:00 GMT+0800",
+"dateModified": "Sat Jun 15 2019 17:01:00 GMT+0800",
 "author": {
   "@type": "Person",
   "name": "Chesterfieldian_PandaO"
@@ -2276,15 +2256,10 @@ DATE=$(date -...">
   }
 },
 "image": [
-""
+"https://acrofrank-b.github.io/post-images/lambda-jia-gou-vs-kappa-jia-gou.png"
 ],
-"description": "需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。
-昨天时间命令 date -d yesterday +%Y%m%d
-切割脚本内容：
-#!/bin/bash
-# filename cutlog.sh
-
-DATE=$(date -..."
+"description": "Lambda 架构
+Lambda 架构由Storm的作者Nathan Marz提出，其设计目的在于提供一个能满足大数据系统关键特性的架构，包括高容错、低延迟、可扩展等。其整合离线计算与实时计算，融合不可变性、读写分离和复杂性隔离等原则，可集..."
  }
 
 </script>
@@ -2300,8 +2275,8 @@ DATE=$(date -..."
     },{
       "@type": "ListItem", 
       "position": 2, 
-      "name": "Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook",
-      "item": "https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"  
+      "name": "大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook",
+      "item": "https://acrofrank-b.github.io/post/lambda-jia-gou-vs-kappa-jia-gou/"  
     }]
   }
   </script>
@@ -2325,7 +2300,7 @@ DATE=$(date -..."
   <PageMap>
     <DataObject type="action">
       <Attribute name="label" value="View"/>
-      <Attribute name="url" value="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/"/>
+      <Attribute name="url" value="https://acrofrank-b.github.io/post/lambda-jia-gou-vs-kappa-jia-gou/"/>
       <Attribute name="class" value="fullscreen"/>
     </DataObject>
   </PageMap>
@@ -2344,7 +2319,7 @@ DATE=$(date -..."
 
 <script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
 
-<link rel="alternate" type="application/atom+xml" title="Nginx定时任务完成日志切割 | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="大数据计算 Lambda架构 vs Kappa架构 到 Flink | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
 
 
 
@@ -2420,14 +2395,17 @@ DATE=$(date -..."
 
       <div class="article-info">
         
+          <div class="flex-box meta-category">
+            <a class="post-cate" href="https://acrofrank-b.github.io/tag/R_tOiY9Aa/">大数据</a></div>
+          
         <h2 class="article-title">
-          <a href="https://acrofrank-b.github.io/post/nginx-ding-shi-ren-wu-wan-cheng-ri-zhi-qie-ge/">Nginx定时任务完成日志切割</a>
+          <a href="https://acrofrank-b.github.io/post/lambda-jia-gou-vs-kappa-jia-gou/">大数据计算 Lambda架构 vs Kappa架构 到 Flink</a>
         </h2>
         <div class="flex-box">
           <div class="flex-box post-meta-box">
             <a class="post-meta" href="https://acrofrank-b.github.io"><span
                 class="iconfont icon-mr-postmeta"></span>Chesterfieldian_PandaO</a>
-            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2020 年 05	月 18日</span>
+            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2019 年 06	月 15日</span>
             
 
 
@@ -2435,45 +2413,105 @@ DATE=$(date -..."
         </div>
       </div>
       <div class="content">
-        <p>需求：每日凌晨将nginx日志根据日期重命名日志文件进行切割。<br>
-昨天时间命令 date -d yesterday +%Y%m%d<br>
-切割脚本内容：</p>
-<pre><code>#!/bin/bash
-# filename cutlog.sh
+        <h1 id="lambda-架构">Lambda 架构</h1>
+<p>Lambda 架构由Storm的作者Nathan Marz提出，其设计目的在于提供一个能满足大数据系统关键特性的架构，包括高容错、低延迟、可扩展等。其整合离线计算与实时计算，融合不可变性、读写分离和复杂性隔离等原则，可集成Hadoop, Kafka, Spark，Storm等各类大数据组件。<br>
+    Lambda 架构可分解为三层Layer，即Batch Layer, Real-Time(Speed) Layer和Serving Layer。<br>
+Batch Layer : 存储数据集，在数据集上预先计算查询函数，并构建查询所对应的View。Batch Layer可以很好的处理离线数据，但有很多场景数据是不断实时生成且需要实时查询处理，对于这情况， Speed Layer更为适合。<br>
+Speed Layer : Batch Layer处理的是全体数据集，而Speed Layer处理的是最近的增量数据流。Speed Layer为了效率，在接收到新的数据后会不断更新Real-time View，而Batch Layer是根据全体离线数据集直接得到Batch View。<br>
+Serving Layer : Serving Layer用于合并Batch View和Real-time View中的结果数据集到最终数据集。</p>
+<p>Lambda架构主要由这几部分构成：数据源（Kafka），数据处理（Storm，Hadoop），服务数据库（Serving DB）。其中数据源和服务数据库是整个架构数据的入口和出口。数据处理则是分为在在线处理和离线处理两部分。</p>
+<p>当数据通过kafka消息中间件，进入Lambda架构后，会同时进入离线处理（Hadoop）和实时处理（Storm）两个处理模块。离线处理进行批计算，将大量T+1的数据进行汇总。而实时处理则是进行流处理或者是微批处理，计算秒级、分钟级的结果。最后都录入到服务数据库（Serving DB）中进行汇总，暴露给上层服务调用。</p>
+<p>Lambda架构的好处是：架构简单，很好的结合了离线批处理和实时流处理的优点，稳定且实时计算成本可控。</p>
+<p>此外，它对数据订正也很友好。如果后期数据统计口径变更，重新运行离线任务，则可以很快的将历史数据订正为最新的口径。</p>
+<p>然而，Lambda也有很多问题。</p>
+<p>其中Jay Kreps认为最突出的问题就是需要同时维护实时处理和离线处理两套代码的同时还要保证两套处理结果保持一致。这无疑是非常让人头疼的。</p>
+<p>一个典型的Lambda架构如下，<br>
+<img src="https://acrofrank-b.github.io/post-images/1594198986179.png" alt="" loading="lazy"><br>
+    这种架构主要面向的场景是逻辑比较复杂同时又希望延迟比较低的异步处理程序，比如搜索引擎、推荐引擎等。<br>
+    系统从一个流中读取被我们定义为不可变的数据，分别灌入实时系统如Storm和批处理系统如Hadoop，然后各自输出自己的结果，这些结果会在查询端进行合并。当然，这种系统也可有很多变种，比如上图中的Kafka也可替换成其他的分布式队列，Storm也可以替换成其他的流式计算引擎。</p>
+<h1 id="kappa-架构">Kappa 架构</h1>
+<p>Kappa 架构是LinkedIn的Jay Kreps结合实际经验和个人体会，针对Lambda架构进行深度剖析，分析其优缺点并采用的替代方案。Lambda 架构的一个很明显的问题是需要维护两套分别跑在批处理和实时计算系统上面的代码，而且这两套代码得产出一模一样的结果。因此对于设计这类系统的人来讲，要面对的问题是：为什么我们不能改进流计算系统让它能处理这些问题？为什么不能让流系统来解决数据全量处理的问题？流计算天然的分布式特性注定其扩展性比较好，能否加大并发量来处理海量的历史数据？基于种种问题的考虑，Jay提出了Kappa这种替代方案。</p>
+<pre><code>![](https://acrofrank-b.github.io/post-images/1594264903817.png)
 
-DATE=$(date -d yesterday +%Y%m%
-LOG_PATH=/usr/local/nginx/logs/
-LOG_NAME=access.log
-BASE_PATH=/var/log/
-SAVE_LOG_NAME=${DATE}.${LOG_NAME}
+那如何用流计算系统对全量数据进行重新计算，步骤如下：
 
-mv ${LOG_PATH}${LOG_NAME} ${BASE_PATH}${SAVE_LOG_NAME}
+    1、用Kafka或类似的分布式队列保存数据，需要几天数据量就保存几天。
 
-kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
+    2、当需要全量计算时，重新起一个流计算实例，从头开始读取数据进行处理，并输出到一个结果存储中。
+
+    3、当新的实例完成后，停止老的流计算实例，并把老的一引起结果删除。
 </code></pre>
-<p>定时执行任务：</p>
-<pre><code>1/* 0 * * * /usr/bin/crontab /root/curlog.sh &gt;/dev/null 2&gt;&amp;1
+<p>一个典型的Kappa架构如下：<br>
+<img src="https://acrofrank-b.github.io/post-images/1594264975376.png" alt="" loading="lazy"></p>
+<p>Kafka或者其他消息中间件，具备保留多日数据的能力。正常情况下kafka都是吐出实时数据，经过实时处理系统，进入服务数据库（Serving DB）。</p>
+<p>当系统需要数据订正时，重放消息，修正实时处理代码，扩展实时处理系统的并发度，快速回溯过去历史数据。</p>
+<p>这样的架构简单，避免了维护两套系统还需要保持结果一致的问题，也很好解决了数据订正问题。</p>
+<p>但它也有它的问题：</p>
+<p>1、消息中间件缓存的数据量和回溯数据有性能瓶颈。通常算法需要过去180天的数据，如果都存在消息中间件，无疑有非常大的压力。同时，一次性回溯订正180天级别的数据，对实时计算的资源消耗也非常大。</p>
+<p>2、在实时数据处理时，遇到大量不同的实时流进行关联时，非常依赖实时计算系统的能力，很可能因为数据流先后顺序问题，导致数据丢失。</p>
+<p>例如：一个消费者在淘宝网上搜索商品。正常来说，搜索结果里，商品曝光数据应该早于用户点击数据产出。然而因为可能会因为系统延迟，导致相同商品的曝光数据晚于点击数据进入实时处理系统。如果开发人员没意识到这样的问题，很可能会代码设计成曝光数据等待点击数据进行关联。关联不上曝光数据的点击数据就很容易被一些简单的条件判断语句抛弃。</p>
+<p>对于离线处理来说，消息都是批处理，不存在关联不上的情况。在Lambda架构下，即使实时部分数据处理存在一定丢失，但因为离线数据占绝对优势，所以对整体结果影响很小。即使当天的实时处理结果存在问题，也会在第二天被离线处理的正确结果进行覆盖。保证了最终结果正确。</p>
+<h1 id="flink">Flink</h1>
+<p>Lambda架构和Kappa架构的优缺点对比：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lambda</td>
+<td>架构简单</td>
+<td>实时、离线数据很难保持一致结果</td>
+</tr>
+<tr>
+<td></td>
+<td>很好的结合了离线批处理和实时流处理的优点</td>
+<td>需要维护两套系统</td>
+</tr>
+<tr>
+<td></td>
+<td>稳定且实时计算成本可控</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>离线数据易于订正</td>
+<td></td>
+</tr>
+<tr>
+<td>Kappa</td>
+<td>只需要维护实时处理模块</td>
+<td>强依赖消息中间件缓存能力</td>
+</tr>
+<tr>
+<td></td>
+<td>可以通过消息重放</td>
+<td>实时数据处理时存在丢失数据可能</td>
+</tr>
+<tr>
+<td></td>
+<td>无需离线实时数据合并</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Kappa在抛弃了离线数据处理模块的时候，同时抛弃了离线计算更加稳定可靠的特点。Lambda虽然保证了离线计算的稳定性，但双系统的维护成本高且两套代码带来后期运维困难。</p>
+<p>为了实现流批处理一体化，Blink采用的将流处理视为批处理的一种特殊形式。因此在内部维持了若干张张流表。通过缓存时间进行约束，限定在一个时间段内的数据组成的表，从而将实时流转为微批处理。</p>
+<p>理论上只要把时间窗口开的足够大，Flink的流表可以存下上百日的数据，从而保证微批处理的“微”足够大可以替换掉离线处理数据。</p>
+<p>但这样做存在几个问题：</p>
+<pre><code>1.Flink的流表是放在内存中，不做持久化处理的。一旦任务发生异常，内存数据丢失，Flink是需要回溯上游消息流，从而转为Kappa的结构。
+
+2.数据窗口开的越大，内存成本越高。受限于成本，对大量数据处理仍然有可支持的物理空间上限。
+
+3.下游接收的通常都是处理结果，对于内存中的流表数据是无法直接访问的。这样无形中增加了开发成本。
 </code></pre>
-<blockquote>
-<p>https://www.kancloud.cn/curder/nginx/96672</p>
-</blockquote>
 
       </div>
 
-      
-      <nav class="post-nav">
-        
-        <div class="nav-previous">
-          <a class="post-nav-link-active" title="celonis调研" href="https://acrofrank-b.github.io/post/celonis-diao-yan/">上一篇文章</a>
-        </div>
-        
-        
-        <div class="nav-next">
-          <a class="post-nav-link-active" title="（待译）Building beautiful REST APIs using Flask, Swagger UI and Flask-RESTPlus" href="https://acrofrank-b.github.io/post/building-beautiful-rest-apis-using-flask-swagger-ui-and-flask-restplus/">下一篇文章</a>
-          
-
-        </div>
-      </nav>
       
 
       
@@ -2508,6 +2546,8 @@ kill -USR1 $(cat /usr/local/nginx/logs/nginx.pid)
       
 
       <div class="post-tags">
+        
+        <a href="https://acrofrank-b.github.io/tag/R_tOiY9Aa/" rel="tag">大数据</a>        
                
       </div>
 
