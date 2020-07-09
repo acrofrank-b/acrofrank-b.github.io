@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook</title>
-<link rel="shortcut icon" href="https://acrofrank-b.github.io/favicon.ico?v=1594287980119">
+<link rel="shortcut icon" href="https://acrofrank-b.github.io/favicon.ico?v=1594288187231">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://acrofrank-b.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Process Mining 流程挖掘/过程挖掘 | Chesterfieldian_PandaO &#39;s Notebook - Atom Feed" href="https://acrofrank-b.github.io/atom.xml">
@@ -21,7 +21,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://acrofrank-b.github.io">
-  <img class="avatar" src="https://acrofrank-b.github.io/images/avatar.png?v=1594287980119" alt="">
+  <img class="avatar" src="https://acrofrank-b.github.io/images/avatar.png?v=1594288187231" alt="">
   </a>
   <h1 class="site-title">
     Chesterfieldian_PandaO &#39;s Notebook
@@ -120,13 +120,38 @@ XES本身不具有对任何特定工具和应用领域的预定义。它们需�
 XES使用Classifier标签对事件分类。</p>
 <h1 id="3-格式说明">3 格式说明</h1>
 <h2 id="31-基础结构">3.1 基础结构</h2>
-<p>XES基础结构标签如表3-1所示，基础结构属性如表3-2所示。<br>
-表3-1 XES基础结构标签表<br>
-| 标签名| 含义| 父标签| 举例<br>
-| ------ | ------ | ------ |<br>
-| og	日志，包含多个具体路径	| 无| 	<log xes.version=”1.1” xes. features=”nested-attributes”><br>
-| trace	路径，包含多个具体的事件	| log| 	<trace><br>
-| event	事件，原子类型，对应时间点而不是时间段	| trace| 	<event></p>
+<p>XES基础结构标签如表3-1所示，基础结构属性如表3-2所示。</p>
+<p>表3-1 XES基础结构标签表</p>
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th>含义</th>
+<th>父标签</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>og	日志，包含多个具体路径</td>
+<td>无</td>
+<td><log xes.version=”1.1” xes. features=”nested-attributes”></td>
+<td></td>
+</tr>
+<tr>
+<td>trace	路径，包含多个具体的事件</td>
+<td>log</td>
+<td><trace></td>
+<td></td>
+</tr>
+<tr>
+<td>event	事件，原子类型，对应时间点而不是时间段</td>
+<td>trace</td>
+<td><event></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
               </div>
               <div class="toc-container">
